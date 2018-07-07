@@ -22,7 +22,7 @@ ul.global-nav__items {
   display: inline-flex;
   width: 100%;
   padding: 0;
-  margin: 0 auto:
+  margin: 0 auto;
 }
 
 ul.global-nav__items li:nth-child(2n) {
@@ -50,11 +50,21 @@ ul.global-nav__items li:nth-child(2n+1) {
 }
 
 ol.bread-crumbs__items {
-  background-color: #5B5B5B
+  background-color: #5B5B5B;
 }
 
 ol.bread-crumbs__items li {
   display: inline-block;
+  list-style: none;
+}
+
+ol.bread-crumbs__items li:after {
+  content: ">";
+  margin: 0 1em;
+}
+
+ol.bread-crumbs__items li:last-child:after {
+  content: none;
 }
 
 a.bread-crumbs__link {
@@ -67,6 +77,7 @@ a.bread-crumbs__link {
 ul.top-ads__items {
   background-color: #CCCCCC;
   display: inline-flex;
+  width: 100%;
 }
 
 ul.top-ads__items li {
@@ -82,6 +93,12 @@ ul.top-ads__items img {
 
 article img.article__image {
   width: 90%;
+  justify-content: center;
+}
+
+h2.main-header__title {
+  background-color: #DBDEE2;
+  font-size: 2.5em;
 }
 
 /* aside */
@@ -90,27 +107,66 @@ ul.aside-ads__items li {
   list-style: none;
 }
 
+ul.aside-ads__items img {
+  width: 90%;
+}
+
 ul.local-nav__items li {
+  color: white;
   background-color: #999999;
   list-style: none;
-  width: 80%;
+  width: 90%;
+  margin: 5px;
+}
+
+ul.local-nav__items li:first-child {
+  border-radius: 10px 10px 0 0;
+}
+
+ul.local-nav__items li:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+/* footer */
+
+nav.footer-nav {
+  display: inline-flex;
+  flex: 0 0 50%;
+  flex-grow: 1;
+}
+
+ul.footer-nav__items {
+  flex-direction: column;
+}
+
+section.about-author {
+  background-color: #DDDDDD;
+  display: inline-flex;
+  flex: 0 0 50%;
+  flex-grow: 1;
+}
+
+small {
+  color: white;
+  text-align: center;
+  width: 100%;
 }
 
 .body {
   display: inline-flex;
   flex-direction: row-reverse;
   flex-wrap: nowrap;
+  align-items: flex-start;
 }
 
 .main {
   flex: 0 0 66.6666%;
-  flex-grow: 1;
+  flex-grow: 2;
 }
 
 .aside {
   flex: 0 0 33.3333%;
   flex-grow: 1;
-  align-items: flex-start;
   background-color: #666666;
 }
 
@@ -124,6 +180,13 @@ article {
 
 div.form {
   background-color: white;
+}
+
+footer {
+  background-color: #666666;
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 body {
