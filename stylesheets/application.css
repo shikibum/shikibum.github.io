@@ -65,6 +65,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  padding: 15px;
 }
 
 button,
@@ -314,7 +315,6 @@ div.form {
 .footer-nav__items {
   flex-direction: column;
   font-size: 0.9em;
-  padding: 1.5em;
 }
 
 .footer-nav__item {
@@ -348,17 +348,15 @@ div.form {
 }
 
 .about-author__image {
-  width: 90px;
-  height: 90px;
+  width: 20%;
   border-radius: 50%;
-  text-align: center;
-  align-items: flex-start;
+  align-self: flex-start;
 }
 
 .about-author__descriptions {
   flex-direction: column;
   font-size: 0.8em;
-  width: 360px;
+  width: 70%;
   line-height: 1.2em;
   margin: 0 0 0 12px;
 }
