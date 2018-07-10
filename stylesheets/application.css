@@ -26,7 +26,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+blockquote {
   margin: 0;
   padding: 0;
 }
@@ -72,10 +73,14 @@ button,
 input,
 select,
 textarea {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
+
+/* container以降 */
 
 .container {
   width: 980px;
@@ -87,21 +92,23 @@ textarea {
 
 .header__title {
   background-color: #999999;
-  height: 140px;
-  line-height: 140px;
+  height: 138px;
+  line-height: 138px;
   color: #434343;
   font-size: 2.6em;
   text-shadow: 0.5px 1px 1px silver;
   text-align: center;
   margin: auto;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4) inset;
 }
 
 /* global-nav */
 
 .global-nav__items {
+  color: #434343;
   display: inline-flex;
   width: 100%;
-  height: 70px;
+  height: 65px;
   padding: 0;
   margin: 0 auto;
 }
@@ -111,11 +118,12 @@ textarea {
   background-color: #AFAFAF;
   font-size: 1em;
   font-weight: bold;
-  line-height: 70px;
+  line-height: 65px;
   width: 20%;
   text-align: center;
-  text-shadow: 1px 1px 2px grey;
+  text-shadow: 0px 1px 2px white;
   list-style: none;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4) inset;
 }
 
 .global-nav__items li:nth-child(2n+1) {
@@ -123,11 +131,16 @@ textarea {
   background-color: #D4D4D4;
   font-size: 1em;
   font-weight: bold;
-  line-height: 70px;
+  line-height: 65px;
   width: 20%;
   text-align: center;
-  text-shadow: 1px 1px 2px grey;
+  text-shadow: 0px 1px 2px white;
   list-style: none;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4) inset;
+}
+
+.global-nav__link {
+  color: #434343
 }
 
 .global-nav__link:visited {
@@ -140,13 +153,14 @@ textarea {
   background-color: #5B5B5B;
   margin: 0;
   height: 30px;
-  font-size: 1em;
   padding: 0 20px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4) inset;
 }
 
 .bread-crumbs__items li {
   display: inline-block;
   list-style: none;
+  height: 30px;
   line-height: 30px;
 }
 
@@ -162,7 +176,7 @@ textarea {
 
 .bread-crumbs__link {
   color: white;
-  font-size: 0.8em;
+  font-size: 0.77em;
 }
 
 /* topadds */
@@ -201,6 +215,7 @@ textarea {
   background-color: #EEEEEE;
   font-size: 2em;
   height: 80px;
+  line-height: 80px;
 }
 
 .article {
@@ -208,12 +223,12 @@ textarea {
   font-size: 1em;
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  padding: 8px;
 }
 
-.artcle__title {
-  font-size: 1.1em;
-  padding: 15px;
+.article__title {
+  font-size: 1.7em;
+  margin: 10px;
 }
 
 .article__paragraph {
@@ -222,17 +237,38 @@ textarea {
 }
 
 .article__link {
+  display: inline-block;
   text-decoration: underline;
   color: blue;
+  margin: 0 0 0 -0.4em
+}
+
+.article__sub-title {
+  font-size: 1.5em;
+  margin: 10px;
 }
 
 .article__unorder-list {
-  margin: 20px 30px;
+  margin: 20px 35px;
 }
 
 .article__unorder-list-item {
   list-style: disc;
   padding-bottom: 1em;
+}
+
+/* blockquote */
+
+.article__blockquote {
+  margin: 30px 7px 20px 40px;
+}
+
+.article__blockquote-paragraph {
+  line-height: 1.8em;
+}
+
+.article__blockquote-paragraph:last-child {
+  display: none;
 }
 
 .article__image {
@@ -241,9 +277,9 @@ textarea {
   margin-right: auto;
 }
 
-.main-header__title {
-  background-color: #DBDEE2;
-  font-size: 2.5em;
+.article__sub-sub-title {
+  font-size: 1em;
+  margin: 15px;
 }
 
 .article__order-list {
@@ -257,8 +293,57 @@ textarea {
 
 /* form */
 
-div.form {
+.form {
   background-color: white;
+  padding: 10px;
+}
+
+.form-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.form__title {
+  font-size: 1.5em;
+  padding: 15px;
+}
+
+.form-item__label {
+  display: inline-flex;
+  justify-content: flex-end;
+  font-size: 0.9em;
+  font-weight: bold;
+  padding-right: 1.2em;
+  width: 38%;
+}
+
+.form-item__text-input {
+  border-radius: 3px;
+  width: 60%;
+  height: 2.5em;
+}
+
+.form-item__textarea {
+  border-radius: 3px;
+  height: 20em;
+  width: 60%;
+}
+
+.form-item__inline-item {
+  display: inline-flex;
+}
+
+.form-item__radio {
+  padding: 5px;
+  background-color: #EEEEEE;
+  border-radius: 3px;
+}
+
+.form-item__checkbox {
+  padding: 5px;
+  background-color: #DDDDDD;
+  border-radius: 3px;
 }
 
 /* aside */
