@@ -57,10 +57,10 @@ textarea {
   padding: 0;
 }
 
-blockquote::before,
-blockquote::after,
-q::before,
-q::after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: '';
   content: none;
 }
@@ -210,18 +210,6 @@ footer {
   z-index: 1;
 }
 
-.main-header::before {
-  position: absolute;
-  display: block;
-  content: "";
-  background: #999999;
-  width: 12px;
-  height: 12px;
-  top: 28px;
-  left: 24px;
-  z-index: 1;
-}
-
 .main-header::after {
   flex-basis: auto;
   align-self: flex-start;
@@ -237,7 +225,6 @@ footer {
 }
 
 .main-header__title {
-  background-color: #EEEEEE;
   font-size: 2.1em;
   height: 80px;
   line-height: 80px;
@@ -247,26 +234,27 @@ footer {
 }
 
 .main-header__title::before {
+  content: "";
   display: block;
   position: absolute;
-  content: "";
-  background: #999999;
-  width: 12px;
+  width: 24px;
   height: 12px;
-  top: 40px;
-  left: 36px;
-  z-index: 1;
+  border-right: 12px #444 solid;
+  left: 24px;
+  top: 28px;
+  background-color: #999;
 }
 
-.main-header__title::after {
-  display: block;
-  position: absolute;
+.main-header__title:after {
   content: "";
-  background: #444444;
+  display: block;
   width: 24px;
-  height: 24px;
-  top: 28px;
+  height: 12px;
+  position: absolute;
+  border-right: 12px #999 solid;
   left: 24px;
+  top: 40px;
+  background-color: #444;
 }
 
 .article {
@@ -290,20 +278,10 @@ footer {
   content: "";
   background: #999999;
   width: 12px;
-  height: 20px;
+  height: 40px;
   top: 3px;
   left: 3px;
-}
-
-.article__title::after {
-  display: block;
-  position: absolute;
-  content: "";
-  background: #444444;
-  width: 12px;
-  height: 20px;
-  top: 23px;
-  left: 3px;
+  border-bottom: 20px solid #444;
 }
 
 .article__paragraph {
@@ -368,25 +346,17 @@ footer {
 
 .article__blockquote::before {
   position: absolute;
-  content: "";
-  top: -42px;
-  left: -27px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #999999;
-  border: 24px solid #999999;
-}
-
-.article__blockquote::after {
-  position: absolute;
   content: "\000022";
-  color: #FFF;
-  line-height: 40px;
-  z-index: 1;
-  font-size: 68px;
-  top: -19px;
-  left: -15px;
+  top: -40px;
+  left: -27px;
+  width: 48px;
+  height: 48px;
+  line-height: 94px;
+  border-radius: 50%;
+  font-size: 86px;
+  color: white;
+  text-align: center;
+  background: #999999;
 }
 
 .article__blockquote-paragraph {
